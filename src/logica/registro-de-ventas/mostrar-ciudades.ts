@@ -9,12 +9,10 @@ export const mostrarCiudades = async (
 ) => {
   ciudades = await listarCiudades();
   Object.values(ciudades).forEach(async ({ nombre, codigopostal }) => {
-    console.log(ciudadABuscar);
     const ciudades = document.querySelector<HTMLSelectElement>(id);
     const options = document.createElement('option');
     const result = await buscarCiudad(ciudadABuscar!);
     if (seleccionado) {
-      console.log(result);
       ciudades!.selectedIndex = result;
       ciudades!.ariaRowIndex = `${result}`;
     }

@@ -16,7 +16,6 @@ export const listarVentas = async (): Promise<Venta[]> => {
   try {
     const response: AxiosResponse = await axiosI.get('/registrarventas/ventas.json');
     const data: Venta[] = Object.values(response.data);
-    console.log(data);
     return data;
   } catch (error) {
     console.error('Error al obtener las ventas:', error);
