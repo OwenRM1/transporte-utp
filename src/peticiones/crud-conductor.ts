@@ -4,8 +4,9 @@ import { axiosI } from './axios';
 
 export const listarConductores = async (): Promise<Conductor[]> => {
   try {
-    const response = await axiosI.get('/registrarconductores/conductores.json');
+    const response = await axiosI.get('/registrarconductor/conductores.json');
     const data = response.data;
+    console.log(data);
     return data;
   } catch (error) {
     console.error('Error al obtener los conductores:', error);
@@ -90,5 +91,22 @@ export const obtenerConductoryPrecio = async (
     return [precio, conductor];
   } catch (error) {
     throw new Error('Ruta no disponible');
+  }
+};
+
+export const eliminarConductor = async (idConductor: string) => {
+  try {
+    await axiosI.delete(`/registrarconductor/conductores/${idConductor}.json`);
+  } catch (error) {
+    console.error('Error al eliminar el conductor:', error);
+  }
+};
+
+export const editarConductor = async (idConductor: string, conductor: Conductor) => {
+  try {
+    await axiosI.put(`/registrarconductor/conductores/${idConductor}.json`, conductor);
+    console.log('Conductor editado exitosamente');
+  } catch (error) {
+    console.error('Error al editar el conductor:', error);
   }
 };

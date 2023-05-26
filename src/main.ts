@@ -1,5 +1,6 @@
 import { mostrarClientes } from './logica/registro-de-clientes/mostrar-clientes';
 import { registrarCliente } from './logica/registro-de-clientes/registrar-cliente';
+import { mostrarConductores } from './logica/registro-de-conductores/mostrar-conductor';
 import { registrarConductor } from './logica/registro-de-conductores/registrar-conductor';
 import { realizarBusqueda } from './logica/registro-de-ventas/buscar-cliente';
 import { mostrarCiudades } from './logica/registro-de-ventas/mostrar-ciudades';
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mostrarCiudades('#destino');
   mostrarVentas();
   mostrarClientes();
+  mostrarConductores();
 });
 
 btnBuscar?.addEventListener('click', realizarBusqueda);
