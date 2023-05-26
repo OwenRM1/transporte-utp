@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/css/normalize.css">
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/normalize.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <title>Conductores</title>
   </head>
   <body>
@@ -23,5 +23,23 @@
         <li><a href="conductores.html">Listado de Conductores</a></li>
       </ul>
     </nav>
+    <section class="contenedor" style="margin-top: 3rem">
+      <h2>Conductores Registrados</h2>
+      <table id="tabla-conductor">
+        <tr>
+          <th>dni</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Ruta</th>
+          <th>Licencia</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </table>
+    </section>
+    <div id="insertar-modal"></div>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

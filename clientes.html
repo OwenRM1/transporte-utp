@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,5 +23,21 @@
         <li><a href="conductores.html">Listado de Conductores</a></li>
       </ul>
     </nav>
+    <section class="contenedor" style="margin-top: 3rem">
+      <h2>Clientes Registrados</h2>
+      <table id="tabla-clientes">
+        <tr>
+          <th>dni</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Telefono</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </table>
+    </section>
+    <div id="insertar-modal-clientes"></div>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

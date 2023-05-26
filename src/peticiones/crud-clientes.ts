@@ -41,3 +41,21 @@ export const crearCliente = async (
     console.error('Error al registrar el cliente:', error);
   }
 };
+
+export const eliminarCliente = async (idCliente: string) => {
+  try {
+    await axiosI.delete(`/registrarclientes/clientes/${idCliente}.json`);
+    console.log('Cliente eliminado exitosamente');
+  } catch (error) {
+    console.error('Error al eliminar el cliente:', error);
+  }
+};
+
+export const editarCliente = async (idCliente: string, cliente: Cliente) => {
+  try {
+    await axiosI.put(`/registrarclientes/clientes/${idCliente}.json`, cliente);
+    console.log('Cliente editado exitosamente');
+  } catch (error) {
+    console.error('Error al editar el cliente:', error);
+  }
+};

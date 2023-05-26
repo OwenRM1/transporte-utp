@@ -1,3 +1,4 @@
+import { mostrarClientes } from './logica/registro-de-clientes/mostrar-clientes';
 import { registrarCliente } from './logica/registro-de-clientes/registrar-cliente';
 import { registrarConductor } from './logica/registro-de-conductores/registrar-conductor';
 import { realizarBusqueda } from './logica/registro-de-ventas/buscar-cliente';
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mostrarCiudades('#origen');
   mostrarCiudades('#destino');
   mostrarVentas();
+  mostrarClientes();
 });
 
 btnBuscar?.addEventListener('click', realizarBusqueda);
@@ -24,4 +26,4 @@ btnRegistrar?.addEventListener('click', () => {
 });
 
 btnCalcularPrecio?.addEventListener('submit', calcularPrecioaRegistrar);
-btnRegistrarConductor?.addEventListener('submit', registrarConductor)
+btnRegistrarConductor?.addEventListener('submit', registrarConductor);
