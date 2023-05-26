@@ -1,3 +1,4 @@
+import { Database, ref, set } from 'firebase/database';
 import { Conductor, conductorDefault } from '../interfaces/conductor';
 import { axiosI } from './axios';
 
@@ -9,6 +10,19 @@ export const listarConductores = async (): Promise<Conductor[]> => {
   } catch (error) {
     console.error('Error al obtener los conductores:', error);
     throw error;
+  }
+};
+
+export const crearConductor = async (
+  database: Database,
+  idConductor: string,
+  conductor: Conductor
+) => {
+  try {
+    await set(ref(database, `registrarconductor/conductores/${idConductor}`), conductor);
+    console.log('Conductor registrado exitosamente');
+  } catch (error) {
+    console.error('Error al registrar el cliente:', error);
   }
 };
 
@@ -27,6 +41,7 @@ export const obtenerConductoryPrecio = async (
       ({ ruta }) => ruta.includes(rutaOrigen) && ruta.includes(rutaDestino)
     );
 
+    //TODO: se puede mejorar el filtro si se busca tambien al que esta disponible. agregando ese campo como booleano
     const rutaIda = conductorFiltrado[0].ruta.split('-')[0].trim();
     const rutaVuelta = conductorFiltrado[0].ruta.split('-')[1].trim();
 

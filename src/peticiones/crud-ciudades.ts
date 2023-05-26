@@ -26,3 +26,18 @@ export const agregarCiudad = async (
     console.error('Error al registrar la ciudad:', error);
   }
 };
+
+export const buscarCiudad = async (nombreCiudad: string): Promise<number> => {
+  try {
+    const response: AxiosResponse = await axiosI.get('/registrarciudades/ciudades.json');
+    const data: Ciudad = response.data;
+    const ciudades: Ciudad[] = Object.values(data);
+    const indiceDeCiudadABuscar = ciudades.findIndex(
+      (ciudad) => ciudad.nombre === nombreCiudad
+    );
+    return indiceDeCiudadABuscar;
+  } catch (error) {
+    console.error('Error al obtener las ciudades:', error);
+    throw error;
+  }
+};

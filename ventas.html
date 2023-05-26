@@ -18,17 +18,18 @@
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="ventas.html">Registro de Ventas</a></li>
-        <li><a href="choferes.html">Registro de Choferes</a></li>
-        <li><a href="empleados.html">Registro de Empleados</a></li>
-        <li><a href="clientes.html">Registro de Clientes</a></li>
-        <li><a href="viajes.html">Viajes Registrados</a></li>
+        <li><a href="registro-conductores.html">Registro de Conductores</a></li>
+        <li><a href="registro-clientes.html">Registro de Clientes</a></li>
+        <li><a href="viajes.html">Ventas Registradas</a></li>
+        <li><a href="clientes.html">Listado de Clientes</a></li>
+        <li><a href="conductores.html">Listado de Conductores</a></li>
       </ul>
     </nav>
     <section class="contenedor">
       <h2>Registro de Ventas</h2>
       <fieldset>
         <legend>Registro de Ventas</legend>
-        <form>
+        <form id="registrar-venta">
           <div class="cliente">
             <div class="cliente-opcion cliente-nombre">
               <label for="nombre">nombres</label>
@@ -50,7 +51,7 @@
               <input id="telefono" type="text" disabled />
             </div>
             <div class="cliente-opcion">
-              <input id="btnBuscar" type="submit" value="buscar cliente" />
+              <input id="btnBuscar" type="button" value="buscar cliente" />
             </div>
 
             <div class="cliente-opcion">
@@ -80,7 +81,7 @@
 
             <div class="cliente-opcion cliente-telefono">
               <label for="precio">precio</label>
-              <input id="precio" type="number" disabled />
+              <input id="precio" type="number" disabled required />
             </div>
 
             <div class="cliente-opcion cliente-telefono">
@@ -88,30 +89,15 @@
             </div>
 
             <div class="cliente-opcion">
-              <input id="btnCalcularPrecio" type="submit" value="calcular precio y registrar venta" />
+              <input
+                id="btnCalcularPrecio"
+                type="submit"
+                value="calcular precio y registrar venta"
+              />
             </div>
           </div>
         </form>
       </fieldset>
-
-
-      <!-- <table>
-        <tr>
-          <th>Destino</th>
-          <th>Precio</th>
-          <th>Fecha</th>
-        </tr>
-        <tr>
-          <td>Destino 1</td>
-          <td>$100</td>
-          <td>2023-05-01</td>
-        </tr>
-        <tr>
-          <td>Destino 2</td>
-          <td>$150</td>
-          <td>2023-05-02</td>
-        </tr>
-      </table> -->
     </section>
     <script type="module" src="./src/main.ts"></script>
   </body>

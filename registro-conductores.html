@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registro de Choferes - Empresa de Buses</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./src/css/normalize.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Empresa de Transportes UTP</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ventas.html">Registro de Ventas</a></li>
+        <li><a href="registro-conductores.html">Registro de Conductores</a></li>
+        <li><a href="registro-clientes.html">Registro de Clientes</a></li>
+        <li><a href="viajes.html">Ventas Registradas</a></li>
+        <li><a href="clientes.html">Listado de Clientes</a></li>
+        <li><a href="conductores.html">Listado de Conductores</a></li>
+      </ul>
+    </nav>
+    <section class="contenedor" style="margin-top: 3rem">
+      <h2>Registro de Choferes</h2>
+      <form id="registrar-chofer">
+        <label for="re-con-nombre">Nombres:</label>
+        <input type="text" id="re-con-nombre" name="re-con-nombre" required /><br />
+
+        <label for="re-con-apellido">Apellidos:</label>
+        <input type="text" id="re-con-apellido" name="re-con-apellido" required /><br />
+
+        <label for="re-con-dni">Dni:</label>
+        <input type="text" id="re-con-dni" name="re-con-dni" required maxlength="8" />
+
+        <label for="re-con-correo">Correo:</label>
+        <input type="email" id="re-con-correo" name="re-con-correo" required /><br />
+
+        <div
+          style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 2rem"
+        >
+          <label for="re-con-licencia">Licencia:</label>
+          <label for="re-con-telefono">Telefono:</label>
+          <input
+            type="text"
+            id="re-con-licencia"
+            name="re-con-licencia"
+            required
+            placeholder="A2"
+            disabled
+            value="A2"
+          />
+          <input type="tel" id="re-con-telefono" name="re-con-telefono" maxlength="9" required />
+        </div>
+
+        <label for="re-con-ruta">Ruta</label>
+        <select name="re-con-ruta" id="re-con-ruta">
+          <option selected disabled>Seleccione una opcion</option>
+          <option value="Huancayo - Lima">Huancayo - Lima</option>
+          <option value="Lima - Pucallpa">Lima - Pucallpa</option>
+          <option value="Huancayo - Pucallpa">Huancayo - Pucallpa</option>
+          <option value="Huanuco - Huancayo">Huanuco - Huancayo</option>
+          <option value="Huanuco - Lima">Huanuco - Lima</option>
+          <option value="Pucallpa - Huanuco">Pucallpa - Huanuco</option>
+        </select>
+
+        <button type="submit">Registrar Chofer</button>
+      </form>
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
