@@ -3,19 +3,16 @@ import { auth } from '../services/firebase.config';
 import { FirebaseError } from 'firebase/app';
 import { mostrarMensaje } from '../Utilidades/mostrar-mensaje';
 
-const formularioRegistro = document.getElementById('registro');
-
 if (window.location.pathname === '/registrate.html') {
+  const formularioRegistro = document.getElementById('registro');
   formularioRegistro!.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = (formularioRegistro as HTMLFormElement)!['registro-email'].value;
     const password = (formularioRegistro as HTMLFormElement)!['registro-password'].value;
 
-    console.log(email);
-    console.log(password);
     try {
       const credencial = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(credencial);
+      mostrarMensaje(`Usuario ${credencial.user?.email} registrado correctamente`);
     } catch (error) {
       const errorCode = (error as FirebaseError).code;
       const errorMessage = (error as FirebaseError).message;

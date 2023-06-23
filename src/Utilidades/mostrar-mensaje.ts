@@ -8,10 +8,10 @@ export const mostrarMensaje = (mensaje: string, tipo: string = 'success'): void 
     stopOnFocus: true,
     style: {
       padding: '20px',
-      background: tipo === 'error' ? '#ff0000' : '#00ff00',
+      background: tipo === 'error' ? 'red' : 'green',
       color: '#fff',
       width: '200px',
-      height: '20px',
+      height: '25px',
       position: 'absolute',
       top: '10px',
       right: '10px',
