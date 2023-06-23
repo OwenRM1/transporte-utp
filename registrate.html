@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/login-registro.css" />
+    <link rel="stylesheet" href="./src/css/normalize.css" />
+    <title>Transporte UTP</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-login">
+        <div>
+          <ul>
+            <li>
+              <a id="inicia-sesion" href="./index.html">Inicia Sesion</a>
+            </li>
+            <li>
+              <a id="registrese" href="./registrate.html">Registrese</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-formulario">
+      <form class="form" id="registro">
+        <h1>Crear una cuenta</h1>
+        <input
+          id="registro-email"
+          type="email"
+          placeholder="Correo electrónico"
+          required
+        />
+        <input id="registro-password" type="password" placeholder="Contraseña" required />
+        <button type="submit">Registrar cuenta</button>
+      </form>
+    </div>
+    <script src="./src/main.ts" type="module"></script>
+  </body>
+</html>

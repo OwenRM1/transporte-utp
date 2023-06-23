@@ -1,0 +1,80 @@
+/* !LOGIN */
+body {
+  font-family:  sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.nav-login {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.container-formulario {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+form h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form input {
+  width: 486px;
+  padding-block: 10px;
+  padding-left: 10px;
+  min-width: 200px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+button[type='submit']:hover {
+  transition: 0.3s ease;
+  background-color: #45a049;
+}
+
+.separator {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4285f4;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.google-btn:hover {
+  transition: 0.3s ease;
+  background-color: #316bca;
+}
+
+.container form:not(:first-child) {
+  margin-top: 20px;
+}
