@@ -1,7 +1,6 @@
 import { AuthErrorCodes, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../services/firebase.config';
 import { FirebaseError } from 'firebase/app';
-import Toastify from 'toastify-js';
 import { mostrarMensaje } from '../Utilidades/mostrar-mensaje';
 
 const formularioRegistro = document.getElementById('registro');
