@@ -1,4 +1,3 @@
-import '../../css/style.css';
 import { BASE_URL_DEV } from '../../variables';
 import {
   editarConductor,
@@ -8,7 +7,6 @@ import {
 import { Conductor } from '../../interfaces/conductor';
 
 export const mostrarConductores = async () => {
-  console.log('llamando desde conductor');
   const tabla = document.querySelector<HTMLTableElement>('#tabla-conductor');
   const conductores: Conductor[] = await listarConductores();
   const insertarModal = document.querySelector<HTMLDivElement>(

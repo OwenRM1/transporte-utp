@@ -1,5 +1,5 @@
 import { buscarClientes } from '../../peticiones/crud-clientes';
-import './registro-de-ventas.css'
+// import './registro-de-ventas.css'
 
 export const realizarBusqueda = (e: Event) => {
   e.preventDefault();

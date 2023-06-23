@@ -6,7 +6,6 @@ export const listarConductores = async (): Promise<Conductor[]> => {
   try {
     const response = await axiosI.get('/registrarconductor/conductores.json');
     const data = response.data;
-    console.log(data);
     return data;
   } catch (error) {
     console.error('Error al obtener los conductores:', error);
@@ -21,7 +20,6 @@ export const crearConductor = async (
 ) => {
   try {
     await set(ref(database, `registrarconductor/conductores/${idConductor}`), conductor);
-    console.log('Conductor registrado exitosamente');
   } catch (error) {
     console.error('Error al registrar el cliente:', error);
   }
@@ -105,7 +103,6 @@ export const eliminarConductor = async (idConductor: string) => {
 export const editarConductor = async (idConductor: string, conductor: Conductor) => {
   try {
     await axiosI.put(`/registrarconductor/conductores/${idConductor}.json`, conductor);
-    console.log('Conductor editado exitosamente');
   } catch (error) {
     console.error('Error al editar el conductor:', error);
   }

@@ -1,6 +1,6 @@
 import { Conductor } from '../../interfaces/conductor';
 import { crearConductor } from '../../peticiones/crud-conductor';
-import { database } from '../../services/firebase.confing';
+import { database } from '../../services/firebase.config';
 
 export const registrarConductor = async (e: Event) => {
   e.preventDefault();
@@ -21,6 +21,6 @@ export const registrarConductor = async (e: Event) => {
     ruta,
     telefono,
   };
-  
+
   await crearConductor(database, conductor.dni, conductor);
 };

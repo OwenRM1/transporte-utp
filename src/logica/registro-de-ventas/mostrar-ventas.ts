@@ -1,6 +1,5 @@
 import { Venta } from '../../interfaces/ventas';
 import { listarVentas, eliminarVenta, editarVenta } from '../../peticiones/crud-ventas';
-import '../../css/style.css';
 import { mostrarCiudades } from './mostrar-ciudades';
 import { Ciudad } from '../../interfaces/ciudad';
 import { obtenerConductoryPrecio } from '../../peticiones/crud-conductor';

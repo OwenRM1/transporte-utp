@@ -5,7 +5,7 @@ import { Ciudad } from '../../interfaces/ciudad';
 import { Venta } from '../../interfaces/ventas';
 import { obtenerConductoryPrecio } from '../../peticiones/crud-conductor';
 import { generarVenta } from '../../peticiones/crud-ventas';
-import { database } from '../../services/firebase.confing';
+import { database } from '../../services/firebase.config';
 
 export const calcularPrecioaRegistrar = async (e: Event) => {
   e.preventDefault();

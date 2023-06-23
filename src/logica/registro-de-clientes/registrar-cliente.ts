@@ -1,6 +1,6 @@
 import { Cliente } from '../../interfaces/cliente';
 import { crearCliente } from '../../peticiones/crud-clientes';
-import { database } from '../../services/firebase.confing';
+import { database } from '../../services/firebase.config';
 
 export const registrarCliente = async (e: Event) => {
   e.preventDefault();

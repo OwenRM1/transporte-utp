@@ -1,4 +1,3 @@
-import '../../css/style.css';
 import { BASE_URL_DEV } from '../../variables';
 import {
   editarCliente,

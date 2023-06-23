@@ -6,6 +6,8 @@ import { realizarBusqueda } from './logica/registro-de-ventas/buscar-cliente';
 import { mostrarCiudades } from './logica/registro-de-ventas/mostrar-ciudades';
 import { mostrarVentas } from './logica/registro-de-ventas/mostrar-ventas';
 import { calcularPrecioaRegistrar } from './logica/registro-de-ventas/registrar-venta';
+import './authentication/login';
+import './authentication/register';
 
 const btnBuscar = document.getElementById('btnBuscar');
 const btnRegistrar = document.getElementById('btnRegistrar');

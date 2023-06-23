@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { API_KEY, BASE_URL } from '../variables';
 
 export const axiosI: AxiosInstance = axios.create({
