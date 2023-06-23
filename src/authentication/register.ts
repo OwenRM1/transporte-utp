@@ -12,12 +12,13 @@ if (window.location.pathname === '/registrate.html') {
 
     try {
       const credencial = await createUserWithEmailAndPassword(auth, email, password);
+      window.location.href = '../../ventas.html';
       mostrarMensaje(`Usuario ${credencial.user?.email} registrado correctamente`);
     } catch (error) {
       const errorCode = (error as FirebaseError).code;
       const errorMessage = (error as FirebaseError).message;
       if (errorCode === AuthErrorCodes.EMAIL_EXISTS) {
-        mostrarMensaje('El correo ya está registrado', 'error');
+        mostrarMensaje('El correo ya está en uso', 'error');
       } else if (errorCode === AuthErrorCodes.INVALID_EMAIL) {
         mostrarMensaje('El correo no es válido', 'error');
       } else if (errorCode === AuthErrorCodes.WEAK_PASSWORD) {

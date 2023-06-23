@@ -1,6 +1,6 @@
 /* !LOGIN */
 body {
-  font-family:  sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -22,7 +22,7 @@ body {
   overflow: hidden;
   margin: 0 auto;
 }
-form h1{
+form h1 {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -77,4 +77,51 @@ button[type='submit']:hover {
 
 .container form:not(:first-child) {
   margin-top: 20px;
+}
+
+nav {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff8000;
 }
