@@ -12,6 +12,7 @@ import './authentication/login';
 import './authentication/register';
 import './authentication/logout';
 import { loginCheck } from './Utilidades/login-check';
+import { mostrarAsientos } from './logica/registro-de-ventas/mostrar-asientos';
 
 const btnBuscar = document.getElementById('btnBuscar');
 const btnRegistrar = document.getElementById('btnRegistrar');
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mostrarVentas();
   mostrarClientes();
   mostrarConductores();
+  mostrarAsientos();
 });
 
 btnBuscar?.addEventListener('click', realizarBusqueda);

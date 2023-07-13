@@ -14,10 +14,14 @@
     />
   </head>
   <body>
-    <header style="display: flex; justify-content: space-around;">
+    <header style="display: flex; justify-content: space-around">
       <h1>Empresa de Transportes UTP</h1>
       <ul>
-        <li class="logget-in"><a style="color: white; text-decoration: none;" id="cerrar-sesion" href="#">Cerrar Sesion</a></li>
+        <li class="logget-in">
+          <a style="color: white; text-decoration: none" id="cerrar-sesion" href="#"
+            >Cerrar Sesion</a
+          >
+        </li>
       </ul>
     </header>
     <nav>
@@ -89,8 +93,10 @@
               <input id="precio" type="number" disabled required />
             </div>
 
-            <div class="cliente-opcion cliente-telefono">
-              <input placeholder="asiento" id="asiento" type="number" max="50" min="0" />
+            <div class="cliente-asiento">
+              <select name="asiento" id="asiento" required>
+                <option value="">Seleccione una asiento</option>
+              </select>
             </div>
 
             <div class="cliente-opcion">
