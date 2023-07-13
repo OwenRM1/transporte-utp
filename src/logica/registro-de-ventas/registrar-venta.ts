@@ -5,7 +5,6 @@ import { Ciudad } from '../../interfaces/ciudad';
 import { Venta } from '../../interfaces/ventas';
 import { obtenerConductoryPrecio } from '../../peticiones/crud-conductor';
 import { generarVenta } from '../../peticiones/crud-ventas';
-import { database } from '../../services/firebase.config';
 
 export const calcularPrecioaRegistrar = async (e: Event) => {
   e.preventDefault();
@@ -18,6 +17,7 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
   const fecha = document.querySelector<HTMLInputElement>('#fecha');
   const precioI = document.querySelector<HTMLInputElement>('#precio');
   const asiento = document.querySelector<HTMLInputElement>('#asiento')!.value;
+  const form = document.querySelector<HTMLFormElement>('#registrar-venta');
 
   const hora = horaActual;
 
@@ -35,8 +35,6 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
     origenRuta.nombre,
     destinoRuta.nombre
   );
-  precioI!.value = precio.toString();
-  validarFecha(fecha!);
 
   const venta: Venta = {
     cliente: { nombre, apellido, dni, telefono },
@@ -48,9 +46,10 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
     asiento,
     precio,
   };
-  await registrarVenta(database, venta.cliente.dni, venta);
+  await registrarVenta(venta);
+  form!.reset();
 };
 
-const registrarVenta = async (database: Database, idVenta: string, venta: Venta) => {
-  await generarVenta(database, idVenta, venta);
+const registrarVenta = async (venta: Venta) => {
+  await generarVenta(venta);
 };
