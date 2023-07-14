@@ -1,5 +1,5 @@
 import { Venta } from '../../interfaces/ventas';
-import { listarVentas, eliminarVenta, editarVenta } from '../../peticiones/crud-ventas';
+import { listarVentas, editarVenta, eliminarVenta } from '../../peticiones/crud-ventas';
 import { mostrarCiudades } from './mostrar-ciudades';
 import { Ciudad } from '../../interfaces/ciudad';
 import { obtenerConductoryPrecio } from '../../peticiones/crud-conductor';
@@ -31,6 +31,7 @@ export const mostrarVentas = async () => {
       <td>${venta.cliente.nombre} ${venta.cliente.apellido.split(' ')[0]}</td>
       <td>${venta.conductor.nombre} ${venta.conductor.apellido.split(' ')[0]}</td>
       <td>${venta.asiento}</td>
+      <td>${venta.horaViaje}
       <td>${venta.fecha}</td>
       <td>${venta.precio}</td>
       <td><a href="#" id="editar-venta">Editar</a></td>
@@ -43,7 +44,7 @@ export const mostrarVentas = async () => {
 
         const confirmacion = confirm('¿Está seguro de eliminar esta venta?');
         if (confirmacion) {
-          await eliminarVenta(venta.cliente.dni);
+          await eliminarVenta(venta.id);
           row.remove();
         }
       });
@@ -156,9 +157,12 @@ export const mostrarVentas = async () => {
             destino: destinoRuta,
             fecha: fecha!.value.split('-').reverse().join('/'),
             horaVenta: hora,
+            horaViaje: venta.horaViaje,
             asiento,
             precio,
+            id: venta.id,
           };
+
           await editarVenta(venta.cliente.dni, ventaActualizada);
           cerrarModal();
         });

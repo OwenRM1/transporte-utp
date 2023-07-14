@@ -5,6 +5,7 @@ import { Venta } from '../../interfaces/ventas';
 import { actualizarAsiento, buscarRuta } from '../../peticiones/crud-asientos';
 import { obtenerConductoryPrecio } from '../../peticiones/crud-conductor';
 import { generarVenta } from '../../peticiones/crud-ventas';
+import { v4 as uuid } from 'uuid';
 
 export const calcularPrecioaRegistrar = async (e: Event) => {
   e.preventDefault();
@@ -46,6 +47,7 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
     asiento: asiento!.value,
     precio,
     horaViaje: horaViaje!.value,
+    id: uuid(),
   };
 
   const ruta = await buscarRuta(+asiento!.value, origenRuta.nombre, destinoRuta.nombre);
@@ -60,8 +62,9 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
 
   asiento!.value = '';
   form!.reset();
+  
   sweetMensaje('Venta registrada correctamente', 'success');
-  // recargar pagina
+
   setTimeout(() => {
     location.reload();
   }, 1600);

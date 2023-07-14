@@ -12,4 +12,5 @@ export interface Venta {
   origen: Ciudad;
   precio: number;
   horaViaje: string;
+  id: string;
 }
