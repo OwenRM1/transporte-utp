@@ -8,7 +8,8 @@ export interface Venta {
   conductor: Conductor;
   destino: Ciudad;
   fecha: string;
-  hora: string;
+  horaVenta: string;
   origen: Ciudad;
   precio: number;
+  horaViaje: string;
 }

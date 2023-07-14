@@ -15,7 +15,6 @@ import { loginCheck } from './Utilidades/login-check';
 import { mostrarAsientos } from './logica/registro-de-ventas/mostrar-asientos';
 import { Ciudad } from './interfaces/ciudad';
 import { obtenerConductoryPrecio } from './peticiones/crud-conductor';
-import { validarFecha } from './Utilidades/validar-fecha';
 
 const btnBuscar = document.getElementById('btnBuscar');
 const btnRegistrar = document.getElementById('btnRegistrar');

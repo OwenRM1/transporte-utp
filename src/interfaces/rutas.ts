@@ -2,6 +2,7 @@ export interface Ruta {
   a: string;
   asientos: Asientos;
   de: string;
+  salida: string;
 }
 
 export interface Asientos {
@@ -22,4 +23,5 @@ export interface RutaI {
   destino: string;
   asiento: number;
   ocupado: boolean;
+  salida: string;
 }

@@ -10,6 +10,7 @@ export const listarAsientos = async () => {
         return {
           origen: ruta.de,
           destino: ruta.a,
+          salida: ruta.salida,
           asiento: asiento.numero,
           ocupado: asiento.ocupado,
         };

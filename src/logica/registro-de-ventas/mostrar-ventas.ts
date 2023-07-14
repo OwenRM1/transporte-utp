@@ -155,7 +155,7 @@ export const mostrarVentas = async () => {
             origen: origenRuta,
             destino: destinoRuta,
             fecha: fecha!.value.split('-').reverse().join('/'),
-            hora,
+            horaVenta: hora,
             asiento,
             precio,
           };

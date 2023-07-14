@@ -1,6 +1,5 @@
-import { Database } from 'firebase/database';
 import { horaActual } from '../../Utilidades/hora-actual';
-import { validarFecha } from '../../Utilidades/validar-fecha';
+import { sweetMensaje } from '../../Utilidades/sweetMenaje';
 import { Ciudad } from '../../interfaces/ciudad';
 import { Venta } from '../../interfaces/ventas';
 import { obtenerConductoryPrecio } from '../../peticiones/crud-conductor';
@@ -15,8 +14,8 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
   const origen = document.querySelector<HTMLSelectElement>('#origen');
   const destino = document.querySelector<HTMLSelectElement>('#destino');
   const fecha = document.querySelector<HTMLInputElement>('#fecha');
-  const precioI = document.querySelector<HTMLInputElement>('#precio');
-  const asiento = document.querySelector<HTMLInputElement>('#asiento')!.value;
+  const asiento = document.querySelector<HTMLInputElement>('#asiento');
+  const horaViaje = document.querySelector<HTMLInputElement>('#salida')!;
   const form = document.querySelector<HTMLFormElement>('#registrar-venta');
 
   const hora = horaActual;
@@ -35,21 +34,21 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
     origenRuta.nombre,
     destinoRuta.nombre
   );
-
+  console.log(asiento!.value);
   const venta: Venta = {
     cliente: { nombre, apellido, dni, telefono },
     conductor,
     origen: origenRuta,
     destino: destinoRuta,
     fecha: fecha!.value.split('-').reverse().join('/'),
-    hora,
-    asiento,
+    horaVenta: hora,
+    asiento: asiento!.value,
     precio,
+    horaViaje: horaViaje!.value,
   };
-  await registrarVenta(venta);
-  form!.reset();
-};
-
-const registrarVenta = async (venta: Venta) => {
+  console.log(venta);
   await generarVenta(venta);
+  asiento!.value = '';
+  form!.reset();
+  sweetMensaje('Venta registrada', 'success');
 };

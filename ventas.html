@@ -93,20 +93,24 @@
               <input id="precio" type="number" disabled required />
             </div>
 
-            <div class="cliente-asiento">
+            <div style="display: block" class="cliente-asiento">
+              <label for="asiento">asiento</label>
               <select name="asiento" id="asiento" required>
                 <option value="">Seleccione una asiento</option>
               </select>
             </div>
-
-            <div class="cliente-opcion">
-              <input
-                id="btnCalcularPrecio"
-                type="submit"
-                value="Registrar venta"
-              />
+            <div style="display: block">
+              <label for="salida">Hora de salida</label>
+              <input id="salida" type="text" disabled required />
             </div>
           </div>
+
+          <input
+            style="margin: 0 auto; display: block; width: 50%; margin-top: 20px"
+            id="btnCalcularPrecio"
+            type="submit"
+            value="Registrar venta"
+          />
         </form>
       </fieldset>
     </section>
