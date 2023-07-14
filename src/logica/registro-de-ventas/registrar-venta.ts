@@ -2,6 +2,7 @@ import { horaActual } from '../../Utilidades/hora-actual';
 import { sweetMensaje } from '../../Utilidades/sweetMenaje';
 import { Ciudad } from '../../interfaces/ciudad';
 import { Venta } from '../../interfaces/ventas';
+import { actualizarAsiento, buscarRuta } from '../../peticiones/crud-asientos';
 import { obtenerConductoryPrecio } from '../../peticiones/crud-conductor';
 import { generarVenta } from '../../peticiones/crud-ventas';
 
@@ -34,7 +35,7 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
     origenRuta.nombre,
     destinoRuta.nombre
   );
-  console.log(asiento!.value);
+
   const venta: Venta = {
     cliente: { nombre, apellido, dni, telefono },
     conductor,
@@ -46,9 +47,22 @@ export const calcularPrecioaRegistrar = async (e: Event) => {
     precio,
     horaViaje: horaViaje!.value,
   };
-  console.log(venta);
+
+  const ruta = await buscarRuta(+asiento!.value, origenRuta.nombre, destinoRuta.nombre);
+
   await generarVenta(venta);
+
+  await actualizarAsiento(
+    { numero: ruta.asiento, ocupado: ruta.ocupado },
+    origenRuta.nombre,
+    destinoRuta.nombre
+  );
+
   asiento!.value = '';
   form!.reset();
-  sweetMensaje('Venta registrada', 'success');
+  sweetMensaje('Venta registrada correctamente', 'success');
+  // recargar pagina
+  setTimeout(() => {
+    location.reload();
+  }, 1600);
 };
