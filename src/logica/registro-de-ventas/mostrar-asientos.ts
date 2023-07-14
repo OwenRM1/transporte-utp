@@ -5,11 +5,6 @@ export const mostrarAsientos = async () => {
 
   const asientos = document.querySelector<HTMLSelectElement>('#asiento');
 
-  // Escucha el evento "change" para cuando se haga una selección
-  // asientos?.addEventListener('change', () => {
-  //   console.log(asientos.value); // Deberías ver en la consola el valor seleccionado.
-  // });
-
   const selectOrigen = document.querySelector<HTMLSelectElement>('#origen');
   const selectDestino = document.querySelector<HTMLSelectElement>('#destino');
   const horaSalida = document.querySelector<HTMLInputElement>('#salida');

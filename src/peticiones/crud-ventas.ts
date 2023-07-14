@@ -8,11 +8,7 @@ export const generarVenta = async (venta: Venta) => {
   try {
     const ventasRef = ref(database, 'registrarventas/ventas');
     const nuevaVentaRef = push(ventasRef, venta);
-    console.log(`Se ha añadido una nueva venta con el ID: ${nuevaVentaRef.key}`);
-    localStorage.setItem('ventaId', nuevaVentaRef.key!);
     return nuevaVentaRef.key;
-    // await axiosI.post('/registrarventas/ventas.json', venta);
-    // console.log('Venta registrada exitosamente');
   } catch (error) {
     console.error('Error al registrar la venta:', error);
   }
@@ -29,6 +25,25 @@ export const listarVentas = async (): Promise<Venta[]> => {
   }
 };
 
+export const eliminarVentaCanceladas = async (id: string) => {
+  const ventasRef = ref(database, 'ventascanceladas');
+  let key;
+  try {
+    const snapshot = await get(ventasRef);
+    if (snapshot.exists()) {
+      snapshot.forEach((childSnapshot) => {
+        const venta = childSnapshot;
+        if (id === venta.val().id) {
+          key = venta.key;
+        }
+      });
+      await axiosI.delete(`/ventascanceladas/${key}.json`);
+    }
+  } catch (error) {
+    console.error(`Error al buscar ventas: ${error}`);
+  }
+};
+
 export const eliminarVenta = async (id: string) => {
   const ventasRef = ref(database, 'registrarventas/ventas');
   let key;
@@ -38,12 +53,12 @@ export const eliminarVenta = async (id: string) => {
       snapshot.forEach((childSnapshot) => {
         const venta = childSnapshot;
         if (id === venta.val().id) {
-          console.log(venta.key);
+          // console.log(venta.key);
           key = venta.key;
         }
       });
+      await axiosI.delete(`/registrarventas/ventas/${key}.json`);
     }
-    await axiosI.delete(`/registrarventas/ventas/${key}.json`);
   } catch (error) {
     console.error(`Error al buscar ventas: ${error}`);
   }
@@ -52,8 +67,7 @@ export const eliminarVenta = async (id: string) => {
 export const editarVenta = async (id: string, venta: Venta) => {
   try {
     await axiosI.put(`/registrarventas/ventas/${id}.json`, venta);
-    console.log('Venta editada exitosamente');
   } catch (error) {
-    console.error('Error al editar la venta:', error);
+    throw new Error('Error al editar la venta:');
   }
 };

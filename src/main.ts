@@ -15,6 +15,7 @@ import { loginCheck } from './Utilidades/login-check';
 import { mostrarAsientos } from './logica/registro-de-ventas/mostrar-asientos';
 import { Ciudad } from './interfaces/ciudad';
 import { obtenerConductoryPrecio } from './peticiones/crud-conductor';
+import { mostrarVentasCanceladas } from './logica/registro-de-ventas/mostrar-ventas-canceladas';
 
 const btnBuscar = document.getElementById('btnBuscar');
 const btnRegistrar = document.getElementById('btnRegistrar');
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mostrarClientes();
   mostrarConductores();
   mostrarAsientos();
+  mostrarVentasCanceladas();
 });
 
 inputFecha?.addEventListener('click', async () => {

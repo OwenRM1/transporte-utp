@@ -2,6 +2,7 @@ import { AxiosResponse } from 'axios';
 import { Cliente } from '../interfaces/cliente';
 import { axiosI } from './axios';
 import { Database, ref, set } from 'firebase/database';
+import { sweetMensaje } from '../Utilidades/sweetMenaje';
 
 export const listarClientes = async (): Promise<Cliente> => {
   try {
@@ -36,26 +37,24 @@ export const crearCliente = async (
 ) => {
   try {
     await set(ref(database, `registrarclientes/clientes/${idCliente}`), cliente);
-    console.log('Cliente registrado exitosamente');
   } catch (error) {
-    console.error('Error al registrar el cliente:', error);
+    throw new Error('Error al registrar el cliente');
   }
 };
 
 export const eliminarCliente = async (idCliente: string) => {
   try {
     await axiosI.delete(`/registrarclientes/clientes/${idCliente}.json`);
-    console.log('Cliente eliminado exitosamente');
   } catch (error) {
-    console.error('Error al eliminar el cliente:', error);
+    throw new Error('Error al eliminar el cliente:');
   }
 };
 
 export const editarCliente = async (idCliente: string, cliente: Cliente) => {
   try {
     await axiosI.put(`/registrarclientes/clientes/${idCliente}.json`, cliente);
-    console.log('Cliente editado exitosamente');
+    sweetMensaje('Cliente editado exitosamente', 'success');
   } catch (error) {
-    console.error('Error al editar el cliente:', error);
+    throw new Error('Error al editar el cliente:');
   }
 };

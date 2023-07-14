@@ -21,9 +21,8 @@ export const agregarCiudad = async (
 ) => {
   try {
     await set(ref(database, `registrarciudades/ciudades/${ciudadId}`), ciudad);
-    console.log('Ciudad registrada exitosamente con ID personalizado:', ciudadId);
   } catch (error) {
-    console.error('Error al registrar la ciudad:', error);
+    throw new Error('Error al registrar la ciudad:');
   }
 };
 

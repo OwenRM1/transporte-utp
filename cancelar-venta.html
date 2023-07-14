@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viajes Registrados - Empresa de Buses</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="./src/css/normalize.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
-    <title>Conductores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header style="display: flex; justify-content: space-around;">
+    <header style="display: flex; justify-content: space-around">
       <h1>Empresa de Transportes UTP</h1>
       <ul>
-        <li class="logget-in"><a style="color: white; text-decoration: none;" id="cerrar-sesion" href="#">Cerrar Sesion</a></li>
+        <li class="logget-in">
+          <a style="color: white; text-decoration: none" id="cerrar-sesion" href="#"
+            >Cerrar Sesion</a
+          >
+        </li>
       </ul>
     </header>
     <nav>
@@ -27,22 +35,20 @@
       </ul>
     </nav>
     <section class="contenedor" style="margin-top: 3rem">
-      <h2>Conductores Registrados</h2>
-      <table id="tabla-conductor">
+      <h2>Ventas Canceladas</h2>
+      <table id="tabla-cancelar">
         <tr>
-          <th>dni</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Ruta</th>
-          <th>Licencia</th>
-          <th>Correo</th>
-          <th>Telefono</th>
-          <th>Editar</th>
+          <th>Origen</th>
+          <th>Destino</th>
+          <th>Dni</th>
+          <th>Cliente</th>
+          <th>Motivo</th>
+          <th>Fecha Cancelada</th>
           <th>Eliminar</th>
         </tr>
       </table>
     </section>
-    <div id="insertar-modal-conductor"></div>
+    <div id="insertar-cancelados"></div>
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
