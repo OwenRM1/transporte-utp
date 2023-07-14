@@ -1,4 +1,4 @@
-import { buscarRuta, listarAsientos } from '../../peticiones/crud-asientos';
+import { listarAsientos } from '../../peticiones/crud-asientos';
 
 export const mostrarAsientos = async () => {
   const rutas = await listarAsientos();
@@ -15,7 +15,6 @@ export const mostrarAsientos = async () => {
   async function generarOpcionesAsientos() {
     // Guarda la selección actual
     const seleccionActual = asientos!.value;
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     // Limpia las opciones actuales
     limpiarSelect(asientos!);

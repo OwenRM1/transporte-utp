@@ -5,7 +5,6 @@ import { eliminarVentaCanceladas } from '../../peticiones/crud-ventas';
 
 export const mostrarVentasCanceladas = async () => {
   const tabla = document.querySelector<HTMLTableElement>('#tabla-cancelar');
-  const insertarModal = document.querySelector<HTMLDivElement>('#insertar-cancelados');
 
   if (window.location.href === `${BASE_URL_DEV}/cancelar-venta.html`) {
     const listarCancelados = async (): Promise<Cancelar[]> => {
