@@ -26,6 +26,7 @@ export const mostrarVentas = async () => {
   }
 
   if (window.location.href === `${BASE_URL_DEV}/viajes.html`) {
+    let total: number = 0;
     ventas.forEach((venta) => {
       const row = (tabla!.insertRow() as HTMLTableRowElement) ?? [];
 
@@ -41,6 +42,11 @@ export const mostrarVentas = async () => {
       <td><a href="#" id="editar-venta">Editar</a></td>
       <td><a href="#" id="cancelar-venta">Cancelar</a></td>
     `;
+      total += venta.precio;
+
+      const totalPagar =
+        document.querySelector<HTMLParagraphElement>('#total-pagar');
+      totalPagar!.textContent = `${total}`
 
       const cancelarVenta = row.querySelector<HTMLAnchorElement>('#cancelar-venta');
       cancelarVenta!.addEventListener('click', async (e) => {
